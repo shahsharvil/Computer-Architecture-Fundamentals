@@ -24,7 +24,7 @@ uint64_t read_tsc(void)
 }
 ```
 
-- The first line of code declares 2 variables *a* and *d* of type *uint32_t*. We will use *a* to store the lower 32 bits of TSC value and *b* for the higher 32. 
+- The first line of code declares 2 variables *a* and *d* of type *uint32_t*. We will use *a* to store the low-order 32 bits of TSC value and *b* for the high-order 32 bits. 
 #### Directions to run the application
  1. Download the ```Read-Time-Stamp-Counter``` sub-directory to your computer. Open a new terminal window, and execute the following command.
 ```
