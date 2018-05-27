@@ -15,14 +15,13 @@ The ```Read Time Stamp Counter``` sub-directory contains the following files:
 
 #### Understanding the underlying assembly code
 #### Directions to run the application
-There are 2 ways to do this:
-1. Download the subdirectory from a new terminal window. This can be done as follows:
+ 1. Download the ```Read-Time-Stamp-Counter``` sub-directory to your computer. This can be done on a new terminal window, by executing the following command.
 ```
-svn export https://github.com/shahsharvil/Computer-Architecture-Fundamentals/trunk/Read-Time-Stamp-Counter
+$ svn export https://github.com/shahsharvil/Computer-Architecture-Fundamentals/trunk/Read-Time-Stamp-Counter
+```  
+2. Make the executable, and run the application.
 ```
-   This will selectively download the ```Read-Time-Stamp-Counter``` folder to your computer.
-
-2. If needed, the entire ```Computer-Architectur-Fundamentals``` repository can be downloaded as:
-```
-git clone https://github.com/shahsharvil/Computer-Architecture-Fundamentals
+$ cd Read-Time-Stamp-Counter
+$ make
+$ ./main
 ```
