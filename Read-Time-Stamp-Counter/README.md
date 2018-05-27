@@ -14,12 +14,23 @@ The ```Read Time Stamp Counter``` sub-directory contains the following files:
 
 
 #### Understanding the underlying assembly code
+- When called, the *```read_tsc(void)```* function reads and returns the current 64 bit Time Stamp Counter value.
+```
+uint64_t read_tsc(void)
+{
+	uint32_t a, d;
+	__asm__ volatile("rdtsc" : "=a" (a), "=d" (d));
+	return (( (uint64_t)a) | ((uint64_t)d) << 32);
+}
+```
+
+- The first line of code declares 2 variables *a* and *d* of type *uint32_t*. We will use *a* to store the lower 32 bits of TSC value and *b* for the higher 32. 
 #### Directions to run the application
- 1. Download the ```Read-Time-Stamp-Counter``` sub-directory to your computer. This can be done on a new terminal window, by executing the following command.
+ 1. Download the ```Read-Time-Stamp-Counter``` sub-directory to your computer. Open a new terminal window, and execute the following command.
 ```
 $ svn export https://github.com/shahsharvil/Computer-Architecture-Fundamentals/trunk/Read-Time-Stamp-Counter
 ```  
-2. Make the executable, and run the application.
+2. Make and run the application.
 ```
 $ cd Read-Time-Stamp-Counter
 $ make
