@@ -29,7 +29,7 @@ uint64_t read_tsc(void)
 
 - Line 2 then executes the ```rdtsc``` assembly language instruction. This instruction in turn reads a 64 bit MSR (Machine State Register, that stores the counter value), and loads the low-order 32 bits of this MSR into the *eax* register, and the high-order 32 bits into the *ebx* register. 
 
-- The ```"=a" (low), "=d" (high)``` part directs GCC to assign ```low``` to the *eax* register and ```high``` to the *edx* register. In other words, after the ```rdtsc``` instruction executes, our ```low``` and ```high``` variables will contain their respective 32 bit values.
+- The ```"=a" (low), "=d" (high)``` part directs GCC to assign ```low``` to *eax* register and ```high``` to *edx* register. In other words, after the ```rdtsc``` instruction executes, our ```low``` and ```high``` variables will contain their respective 32 bit values.
 
 - Line 3 finally aggregates the 32 bit ```low``` and ```high``` unsigned integers into a single unsigned 64 bit TSC value.
 #### Directions to run the application
