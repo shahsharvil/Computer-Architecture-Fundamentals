@@ -37,7 +37,7 @@ Ret type:    unsigned 64 bit integer
 *************************************************************************/
 uint64_t read_tsc(void)
 {
-	uint32_t a, d;
-	__asm__ volatile("rdtsc" : "=a" (a), "=d" (d));
-	return (( (uint64_t)a) | ((uint64_t)d) << 32);
+	uint32_t low, high;
+	__asm__ volatile("rdtsc" : "=a" (low), "=d" (high));
+	return (( (uint64_t)high) | ((uint64_t)high) << 32);
 }
