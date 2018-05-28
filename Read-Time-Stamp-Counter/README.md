@@ -1,4 +1,4 @@
-#### README
+#### Read-Time-Stamp-Counter
 The ```Read-Time-Stamp-Counter``` sub-directory contains the following files: 
 
   1. src.c
