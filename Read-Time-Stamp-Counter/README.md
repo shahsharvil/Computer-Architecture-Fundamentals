@@ -25,9 +25,9 @@ uint64_t read_tsc(void)
 }
 ```
 
-- The first line of the function declares two variables ```low``` and ```high``` of type ```uint32_t```. We will use ```low``` to store the low-order 32 bits of TSC value and ```high``` for the high-order 32 bits.
+- Line 1 of the function declares two variables ```low``` and ```high``` of type ```uint32_t```. We will use ```low``` to store the low-order 32 bits of TSC, and ```high``` for the high-order 32 bits.
 
-- Line 2 then executes the ```rdtsc``` assembly language instruction. This instruction in turn reads a 64 bit MSR (Machine State Register) that stores the counter value, and loads the low-order 32 bits of this MSR into the *eax* register, and the high-order 32 bits into the *ebx* register. 
+- Line 2 then executes the ```rdtsc``` assembly language instruction. This instruction in turn reads a 64 bit MSR (Machine State Register) that stores the counter value, and loads its low-order 32 bits into the *eax* register, and the high-order 32 bits into the *edx* register. 
 
 - The ```"=a" (low), "=d" (high)``` part directs GCC to assign ```low``` to *eax* register and ```high``` to *edx* register. In other words, after the ```rdtsc``` instruction executes, our ```low``` and ```high``` variables will contain their respective 32 bit values.
 
