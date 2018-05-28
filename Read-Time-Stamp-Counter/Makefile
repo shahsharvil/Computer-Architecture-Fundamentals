@@ -1,5 +1,4 @@
 CC = gcc
-
 FLAGS = -Wall
 
 main:
