@@ -11,7 +11,7 @@ TSC is a special 64 bit register, whose value is incremented every clock cycle. 
 Since it counts the number of cycles passed since reset, the TSC value is always an increasing number until it reaches its maximum limit. At this point, its value is set again.
 #### Why should you not use *```rdtsc```* in your application?
 - ```rdtsc``` should not be used for measuring time. The clock frequency can dramatically change in events of Power Saving or CPU Boosting, resulting in surprising ```rdtsc``` behavior. (To read time, the *syscall* [clock_gettime](https://linux.die.net/man/3/clock_gettime) should be used instead).
-- In case of [out of order execution](https://en.wikipedia.org/wiki/Out-of-order_execution), the ```rdtsc``` instruction may get executed later than expected. Although this problem can be solved using the ```rdtscp``` instruction, its not a good idea in general to rely on these instructions.
+- In case of [out-of-order-execution](https://en.wikipedia.org/wiki/Out-of-order_execution), the ```rdtsc``` instruction may get executed later than expected. Although this problem can be solved using the ```rdtscp``` instruction, its not a good idea in general to rely on these instructions.
 - For different cores of a multi-core CPU, the ```rdtsc``` instruction might return different values of TSC at the same physical instant of time.
 
 #### Understanding the underlying assembly code
