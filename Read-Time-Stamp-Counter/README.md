@@ -1,3 +1,4 @@
+#### README
 The ```Read Time Stamp Counter``` sub-directory contains the following files: 
 
   1. src.c     (contains the source code for the application)
@@ -5,11 +6,12 @@ The ```Read Time Stamp Counter``` sub-directory contains the following files:
   3. README
 
 #### The *Time Stamp Counter(TSC)*
-TSC is a special 64 bit register, that stores the number of cycles elapsed since reset. Its value can be read using the rdtsc instruction, which loads the current value of TSC into the EAX and EDX registers.
+TSC is a special 64 bit register, whose value is incremented every clock cycle. Its value can be read using the rdtsc instruction, which loads the current value of TSC into the EAX and EDX registers.
 
-Since it counts the number of cycles passed, the TSC value is always an increasing number until it reaches its maximum limit. At this point, its value is set again.
+Since it counts the number of cycles passed since reset, the TSC value is always an increasing number until it reaches its maximum limit. At this point, its value is set again.
 #### Why should you not use *rdtsc* in your application?
-
+- rdtsc should not be used for measuring time. This is because it returns the number of clock cycles passed since reset. The clock frequency that can dramatically change in events of Power Saving or CPU Boosting.
+- 
 
 #### Understanding the underlying assembly code
 - When called, the ```read_tsc(void)``` function reads and returns the current 64 bit Time Stamp Counter value.
